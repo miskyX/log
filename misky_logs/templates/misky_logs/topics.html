@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "misky_logs/base.html" %}
+
+{% block content %}
+
+<p>Topics</p>
+
+<ul>
+    {% for topic in topics %}
+      <li>
+          <a href="{% url 'misky_logs:topic' topic.id %}">{{ topic}} </a>
+      </li>
+    {% empty %}
+      <li> No topics have been adder yet.</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}
+</body>
+</html>
