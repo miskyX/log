@@ -19,15 +19,17 @@ from django.urls import path,include
 from misky_logs.urls import views
 
 
-app_name = 'misky_logs'
+#app_name = 'misky_logs'
+#app_name = 'users'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #添加默认主页
-
     #path('',views.index, name='index'),
+    path('',include('misky_logs.urls',namespace='misky_logs')),
 
-    path('',include('misky_logs.urls',namespace='misky_logs'))
+    #添加用户主页
+    path('users/',include('users.urls',namespace='users')),
 
 
 

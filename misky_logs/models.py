@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.models import User #导入用户模型
+
 # Create your models here.
 
 #导入了模块models，让我们开始创建模型，模型就是我们学习的类
@@ -10,6 +12,7 @@ class Topic(models.Model):
 
     text = models.CharField(max_length=200)  #定义一个text属性，字符或文本，限制了长度（名称，城市等等）
     date_added = models.DateTimeField(auto_now_add=True) #定义一个添加日期，继承了属性，自动设置成当前时间
+    owner = models.ForeignKey(User,on_delete=models.DO_NOTHING) #建立一个到模型USER的外间联系
 
     def __str__(self):
         '''返回模型字符串表示'''

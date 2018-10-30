@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "misky_logs/base.html" %}
+{% block content %}
+
+<form action="{% url 'users:register' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button name="提交">注册</button>
+    <input type="hidden" name="next" value="{% url 'misky_logs:index' %}" />
+
+</form>
+{% endblock content %}
+</body>
+</html>

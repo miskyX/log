@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 添加我的应用
     'misky_logs',
+    #添加用户应用
+    'users',
+    #添加第三方应用程序
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/users/login/'
+#未登录的用户请求装饰器的保护页面，重定向到LOGIN——URL
+
+
+# 设置BOOTSTRAP3
+BOOTSTRAP3 = {
+    'include_jquery':True,
+}
